@@ -146,6 +146,23 @@ def main():
   # Baselines are very simple. No need to use the GPU.
   if True:
 
+#    model = seq2seq_model.Seq2SeqModel(
+#        FLAGS.architecture,
+#        FLAGS.seq_length_in,
+#        FLAGS.seq_length_out,
+#        FLAGS.size, # hidden layer size
+#        FLAGS.num_layers,
+#        FLAGS.max_gradient_norm,
+#        FLAGS.batch_size,
+#        FLAGS.learning_rate,
+#        FLAGS.learning_rate_decay_factor,
+#        summaries_dir,
+#        FLAGS.loss_to_use,
+#        len( actions ),
+#        not FLAGS.omit_one_hot,
+#        FLAGS.residual_velocities,
+#        dtype=dtype)
+	
     model = seq2seq_model.Seq2SeqModel(
         FLAGS.architecture,
         FLAGS.seq_length_in,
@@ -156,12 +173,16 @@ def main():
         FLAGS.batch_size,
         FLAGS.learning_rate,
         FLAGS.learning_rate_decay_factor,
-        summaries_dir,
         FLAGS.loss_to_use,
         len( actions ),
         not FLAGS.omit_one_hot,
         FLAGS.residual_velocities,
         dtype=dtype)
+	  
+	  
+  
+  
+  
 
     # Load the data
     _, test_set, data_mean, data_std, dim_to_ignore, dim_to_use =  translate.read_all_data(
