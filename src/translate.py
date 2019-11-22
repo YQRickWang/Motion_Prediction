@@ -167,7 +167,7 @@ def train():
     optimiser = optim.SGD(model.parameters(), lr=args.learning_rate)
     #optimiser = optim.Adam(model.parameters(), lr=learning_rate, betas = (0.9, 0.999))
 
-    for _ in range( args.iterations ):
+    for _ in range( int(args.iterations) ):
       optimiser.zero_grad()
       model.train()
 
